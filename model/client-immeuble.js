@@ -1,0 +1,1 @@
+ClientImmeuble = new Mongo.Collection("client_immeuble");

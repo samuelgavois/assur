@@ -1,0 +1,32 @@
+<div layout="column" flex layout-fill ng-cloak style="width:100%">
+    <md-toolbar md-scroll-shrink>
+        <div class="md-toolbar-tools">
+            <h2><span>Liste des Utilisateurs</span></h2>
+            <span flex></span>
+            <md-switch ng-model="switch.Commercial" aria-label="Commerciaux" ng-change="utilisateurListe.onSwitchChange('Commercial', switch.Commercial)">
+                Commerciaux
+            </md-switch> 
+            <md-switch ng-model="switch.Gestionnaire" aria-label="Gestionnaires" ng-change="utilisateurListe.onSwitchChange('Gestionnaire', switch.Gestionnaire)">
+                Gestionnaires
+            </md-switch> 
+            <md-switch ng-model="switch.Administrateur" aria-label="Administrateurs" ng-change="utilisateurListe.onSwitchChange('Administrateur', switch.Administrateur)">
+                Administrateurs
+            </md-switch>    
+        </div>
+    </md-toolbar>
+
+    <md-content style="height: 600px;" md-theme="altTheme">
+        <section>
+            <md-list-item ng-repeat="utilisateur in utilisateurs" ng-click="goToPerson(person.name, $event)" class="noright" ng-hide="utilisateur.isHide">
+                <img alt="{{ utilisateur.nom }}" ng-src="/images/utilisateurs/{{ utilisateur.photo }}" class="md-avatar">
+                <p>{{ utilisateur.nom }}</p>
+                <p>{{ utilisateur.role }}</p>
+                
+                <md-checkbox class="md-secondary" ng-model="person.selected"></md-checkbox>
+                <md-icon md-svg-icon="communication:email" ng-click="doSecondaryAction($event)" aria-label="Send Email" class="md-secondary md-hue-3"></md-icon>
+                <md-icon class="md-secondary" ng-click="doSecondaryAction($event)" aria-label="Chat" md-svg-icon="communication:message"></md-icon>
+            </md-list-item>
+        </section>
+    </md-content>
+
+</div>

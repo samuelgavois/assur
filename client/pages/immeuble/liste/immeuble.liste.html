@@ -1,0 +1,38 @@
+<div layout="column" flex layout-fill ng-cloak style="width:100%">
+    <md-toolbar md-scroll-shrink >
+        <div class="md-toolbar-tools">
+            <h2>
+                <span>Liste des Immeubles de <b>{{client.nom}}</b></span>
+            </h2>
+            <span flex></span>   
+        </div>
+    </md-toolbar>
+
+    <md-content style="height: 600px;" md-theme="altTheme">
+        <section>
+            <md-card ng-repeat="immeuble in immeubles" md-colors="::{backgroundColor: '{{theme}}-primary-700'}">
+                <md-card-title>
+                    <md-card-title-media>
+                        <div class="md-media-sm card-media" layout>
+                            <md-icon md-svg-src="/images/icons/account_dark.svg" class="no-size" ng-click="clientListe.goToClient(client._id, $event)"></md-icon>
+                        </div>
+                    </md-card-title-media>
+                    <md-card-title-text>
+                        <span class="md-headline" ng-click="clientListe.goToClient(client._id, $event)">{{ immeuble.nom }}</span>
+                        <span class="md-subhead">
+                            {{ immeuble.adresse1 }}<span ng-if="immeuble.adresse2 != null">, </span>{{ immeuble.adresse2 }}<br/>
+                            {{ immeuble.codepostal }} {{ immeuble.ville }}
+                        </span>
+                        <span class="md-body-1">
+                            
+                        </span>
+                    </md-card-title-text>
+                    <md-card-title-text>
+                        
+                    </md-card-title-text>
+                </md-card-title>
+            </md-card>
+        </section>
+    </md-content>
+
+</div>

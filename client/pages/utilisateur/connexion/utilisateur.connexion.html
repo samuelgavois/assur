@@ -1,0 +1,15 @@
+<md-content md-theme="docs-dark" layout-gt-sm="row" layout-padding>
+    <div>
+        <md-input-container>
+            <label>Email</label>
+            <input ng-model="user.email" type="email">
+        </md-input-container>
+
+        <md-input-container>
+            <label>Password</label>
+            <input ng-model="user.password">
+        </md-input-container>
+
+        <input type="submit" value="Register" ng-click="utilisateurConnexion.submit($event)">
+    </div>
+</md-content>

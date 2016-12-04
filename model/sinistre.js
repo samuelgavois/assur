@@ -1,0 +1,1 @@
+Sinistre = new Mongo.Collection("sinistre");

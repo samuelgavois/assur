@@ -1,0 +1,67 @@
+<div layout="column" ng-cloak class="md-inline-form">
+
+  <md-content md-theme="docs-dark" layout-gt-sm="row" layout-padding>
+    <md-input-container flex="40">
+        <label class="md-title">Nom</label>
+        <input ng-model="client.nom">
+    </md-input-container>
+
+    <md-input-container flex="40">
+        <label class="md-title">Contact</label>
+        <input ng-model="client.contact">
+    </md-input-container>
+
+    <md-switch disabled flex="20" ng-model="!client.prospect" aria-label="Prospect" ng-change="prospectCreation.onSwitchProspectChange(client.prospect)">
+        <label class="md-title">Client</label>
+    </md-switch>
+  </md-content>
+
+  <md-content layout-padding>
+      <form name="clientForm">
+        <div layout-gt-xs="row">
+            <md-input-container flex="35">
+                <label class="md-title">Email</label>
+                <input ng-model="client.email" type="email" required>
+            </md-input-container>
+
+            <md-input-container flex="35">
+                <label class="md-title">Téléphone</label>
+                <input ng-model="client.telephone">
+            </md-input-container>
+
+            <md-input-container flex="30">
+                <label class="md-title">N° de SIRET</label>
+                <input ng-model="client.siret">
+            </md-input-container>
+        </div>
+
+        <div layout-gt-xs="row">
+          <md-input-container flex="50">
+            <label class="md-title">Date de premier RDV</label>
+            <md-datepicker ng-model="client.rdv1"></md-datepicker>
+          </md-input-container>
+
+          <md-input-container flex="50">
+            <label class="md-title">Date du prochain RDV</label>
+            <md-datepicker ng-model="client.rdv2"></md-datepicker>
+          </md-input-container>
+        </div>
+
+        <div layout-gt-sm="row">
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>Potentiel</label>
+            <input ng-model="client.potentiel">
+          </md-input-container>
+
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>Commentaires</label>
+            <textarea ng-model="client.commentaire" md-maxlength="150" rows="5" md-select-on-focus></textarea>
+          </md-input-container>
+        </div>
+
+        <md-button ng-if="mode=='C'" class="md-raised md-primary" ng-click="clientCreation.create(client)">Créer</md-button>
+        <md-button ng-if="mode=='D'" class="md-raised md-primary" ng-click="clientDetail.update(client)">Enregistrer</md-button>
+      </form>
+  </md-content>
+
+</div>

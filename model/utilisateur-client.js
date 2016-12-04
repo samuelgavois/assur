@@ -1,0 +1,1 @@
+UtilisateurClient = new Mongo.Collection("utilisateur_client");

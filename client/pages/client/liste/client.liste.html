@@ -1,0 +1,41 @@
+<div layout="column" flex layout-fill ng-cloak style="width:100%">
+    <md-toolbar md-scroll-shrink >
+        <div class="md-toolbar-tools">
+            <h2>
+                <span ng-if="!isProspectListe">Liste des Clients</span>
+                <span ng-if="isProspectListe">Liste des Prospects</span>
+            </h2>
+            <span flex></span>   
+        </div>
+    </md-toolbar>
+
+    <md-content style="height: 600px;" md-theme="altTheme">
+        <section>
+            <md-card ng-repeat="client in clients" md-colors="::{backgroundColor: '{{theme}}-primary-700'}">
+                <md-card-title>
+                    <md-card-title-media>
+                        <div class="md-media-sm card-media" layout>
+                            <md-icon md-svg-src="/images/icons/account_dark.svg" class="no-size with-cursor" ng-click="clientListe.goToClient(client._id, $event)"></md-icon>
+                        </div>
+                    </md-card-title-media>
+                    <md-card-title-text>
+                        <span class="md-headline with-cursor" ng-click="clientListe.goToClient(client._id, $event)">{{ client.nom }}</span>
+                        <span class="md-subhead">{{ client.contact }}</span>
+                        <span class="md-body-1">
+                            {{ client.email }} / {{ client.telephone }}
+                        </span>
+                    </md-card-title-text>
+                    <md-card-title-text>
+                        <span class="md-subhead">Prochain RDV : {{ client.rdv1 }}</span>
+                        <span class="md-subhead">Potentiel : </span>
+                        <span class="md-subhead">
+                            <md-icon md-svg-src="/images/icons/location_city_dark.svg"></md-icon>
+                            Nb. immeubles : <a ng-href="/immeuble-liste/{{client._id}}"><b>{{ client.nbimmeubles }}</b></a>
+                        </span>
+                    </md-card-title-text>
+                </md-card-title>
+            </md-card>
+        </section>
+    </md-content>
+
+</div>

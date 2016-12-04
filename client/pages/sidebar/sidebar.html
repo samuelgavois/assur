@@ -1,0 +1,17 @@
+<md-sidenav class="md-sidenav-left md-whiteframe-4dp" md-component-id="sidebarleft">
+	<md-toolbar class="md-theme-light">
+		<h1 class="md-toolbar-tools">Menu</h1>
+	</md-toolbar>
+	<md-content layout-padding>
+	    <md-list layout-align="start start">
+	    	<md-list-item ng-repeat="item in items">
+		      <md-button ng-click="listItemClick($index)" md-autofocus="$index == menuSelected" class="md-list-item-content" >
+		        <md-icon md-svg-src="/images/icons/{{item.icon}}" class="dark"></md-icon>
+		        <span class="md-inline-list-icon-label">{{item.name}}</span>
+		      </md-button>
+		    </md-list-item>
+	    </md-list>
+
+	    <gapi layout-align="start start"></gapi>
+	</md-content>
+</md-sidenav>

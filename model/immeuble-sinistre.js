@@ -1,0 +1,1 @@
+ImmeubleSinistre = new Mongo.Collection("immeuble_sinistre");

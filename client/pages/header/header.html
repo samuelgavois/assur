@@ -1,0 +1,21 @@
+<md-toolbar class="md-warn">
+	<div class="md-toolbar-tools">
+		<md-button class="md-icon-button" aria-label="Menu" ng-click="header.toggleSidebarLeft()">
+      		<md-icon md-svg-icon="/images/icons/menu.svg"></md-icon>
+    	</md-button>
+		<h1>
+			<a ng-href="/">
+				<b>ASSUR</b><br hide-gt-sm/><span hide-xs hide-sm> </span>Gestion des Clients/Immeubles
+			</a>
+		</h1>
+		<span flex></span>
+
+		<md-button ng-show="hasGoBack" class="md-fab md-primary md-mini" aria-label="Revenir à la page précédente" ng-click="header.goBack(-1)">
+            <md-icon md-svg-src="/images/icons/navigate_before.svg"></md-icon>
+        </md-button>
+
+		<md-button ng-show="hasUserConnected" class="md-fab md-primary md-mini" aria-label="Voir les informations de l'utilisateur" ng-click="header.showUserInformation()">
+            <md-icon md-svg-src="/images/icons/account.svg"></md-icon>
+        </md-button>
+	</div>
+</md-toolbar>
