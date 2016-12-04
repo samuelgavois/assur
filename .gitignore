@@ -1,3 +1,4 @@
 .meteor
 .svn
 .DS_Store
+.EDC*
